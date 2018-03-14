@@ -13,7 +13,7 @@ public class Calculate {
 	* Констурктор вывод строки в консоль.
 	* @param args - args
 	*/
-	public static void main (String[] args) {
+	public static void main(String[] args) {
 		System.out.println("Hello World!!");
 	}
 
@@ -24,7 +24,7 @@ public class Calculate {
 	* @param name Your name
 	* @return Echo plus Your name
 	*/
-	public String echo (String name) {
+	public String echo(String name) {
 		return "Echo, Echo, Echo : " + name;
 	}
 

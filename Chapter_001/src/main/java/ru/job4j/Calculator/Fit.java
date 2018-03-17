@@ -2,6 +2,8 @@ package ru.job4j.calculator;
 
 /**
  * Программа расчета идеального веса.
+ * @author Sergei Shangareev (sezhaekb@gmail.com)
+ * @version 1.0
  */
 public class Fit {
 

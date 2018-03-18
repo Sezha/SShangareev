@@ -8,13 +8,15 @@ package ru.job4j.calculator;
 public class Converter {
     /**
      * Курс долллара
+     * Cтатическая константа
      */
-    private int dollar = 60;
+    public static final int dollar = 60;
 
     /**
      * Курс евро
+     * Cтатическая константа
      */
-    private int euro = 70;
+    public static final int euro = 70;
 
     /**
      * Конвертируем рубли в евро.

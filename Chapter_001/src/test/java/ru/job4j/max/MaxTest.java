@@ -18,4 +18,11 @@ public class MaxTest {
 			assertThat(result, is(2));
 	}
 
+	@Test
+	public void whenFirstLessSecondOverThird() {
+		Max maximum = new Max();
+			int result = maximum.maxThree(1, 5, 4);
+			assertThat(result, is(5));
+	}
+
 }

@@ -24,12 +24,6 @@ public class Max {
      * @return Максимальное число.
      */
     public int maxThree(int first, int second, int third) {
-    	
-    	//compare two numbers first and second
-    	int temp = this.max(first, second);
-    	temp = this.max(temp, third);
-
-    	return temp;
-
+    	    	return max(first, max(second, third));
     }
 }

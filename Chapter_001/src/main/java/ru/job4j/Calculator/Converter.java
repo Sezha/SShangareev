@@ -10,13 +10,13 @@ public class Converter {
      * Курс долллара
      * Cтатическая константа
      */
-    public static final int dollar = 60;
+    public static final int DOLLAR = 60;
 
     /**
      * Курс евро
      * Cтатическая константа
      */
-    public static final int euro = 70;
+    public static final int EURO = 70;
 
     /**
      * Конвертируем рубли в евро.
@@ -25,7 +25,7 @@ public class Converter {
      */
     public int rubleToEuro(int value) {
 
-        return (value / euro);
+        return (value / EURO);
     }
 
     /**
@@ -35,7 +35,7 @@ public class Converter {
      */
     public int rubleToDollar(int value) {
 
-        return (value / dollar);
+        return (value / DOLLAR);
     }
 
     /**
@@ -45,7 +45,7 @@ public class Converter {
      */
     public int euroToRuble(int value) {
 
-        return (value * euro);
+        return (value * EURO);
     }
 
     /**
@@ -55,6 +55,6 @@ public class Converter {
      */
     public int dollarToRuble(int value) {
 
-        return (value * dollar);
+        return (value * DOLLAR);
     }
 }

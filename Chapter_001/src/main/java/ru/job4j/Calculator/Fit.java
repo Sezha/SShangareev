@@ -6,7 +6,23 @@ package ru.job4j.calculator;
  * @version 1.0
  */
 public class Fit {
+    /**
+     * Коэффициент разницы для роста мужчин
+     * Cтатическая константа
+     */
+    public static final int DIFFERENCE_FOR_MAN_HEIGHT = 100;
 
+    /**
+     * Коэффициент разницы для роста женщин
+     * Cтатическая константа
+     */
+    public static final int DIFFERENCE_FOR_WOMEN_HEIGHT = 110;
+
+    /**
+     * Коэффициент для веса
+     * Cтатическая константа
+     */
+    public static final double RATE_FOR_WEIGHT = 1.15;
     /**
      * Идеальный вес для мужщины.
      * @param height Рост.
@@ -14,7 +30,7 @@ public class Fit {
      */
 
     public double manWeight(double height) {
-        return ((height - 100) * 1.15);
+        return ((height - DIFFERENCE_FOR_MAN_HEIGHT) * RATE_FOR_WEIGHT);
     }
 
     /**
@@ -23,6 +39,6 @@ public class Fit {
      * @return идеальный вес.
      */
     public double womanWeight(double height) {
-        return ((height - 110) * 1.15);
+        return ((height - DIFFERENCE_FOR_WOMEN_HEIGHT) * RATE_FOR_WEIGHT);
     }
 }

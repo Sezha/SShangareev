@@ -1,5 +1,6 @@
 package ru.job4j.loop;
 
+import java.util.function.BiPredicate;
 /**
  * Class Paint creating pyramid
  * @author Sergei Shangsreev (sezhaekb@gmail.com)
@@ -12,6 +13,14 @@ public class Paint {
      * @return
      */
     public String rightTriangle(int height) {
+
+        return this.loopBy(
+                height,
+                height,
+                (row, column) -> row >= column
+        );
+
+        /*
         // Буфер для результата.
         StringBuilder screen = new StringBuilder();
         // ширина будет равна высоте.
@@ -33,6 +42,7 @@ public class Paint {
         }
         // Получаем результат.
         return screen.toString();
+        */
     }
 
     /**
@@ -41,6 +51,12 @@ public class Paint {
      * @return
      */
     public String leftTriangle(int height) {
+        return this.loopBy(
+                height,
+                height,
+                (row, column) -> row >= height - column - 1
+        );
+        /*
         StringBuilder screen = new StringBuilder();
         int weight = height;
         for (int row = 0; row != height; row++) {
@@ -54,6 +70,7 @@ public class Paint {
             screen.append(System.lineSeparator());
         }
         return screen.toString();
+        */
     }
 
     /**
@@ -62,11 +79,40 @@ public class Paint {
      * @return
      */
     public String pyramid(int height) {
+        return this.loopBy(
+                height,
+                2 * height - 1,
+                (row, column) -> row >= height - column - 1 && row + height - 1 >= column
+        );
+        /*
         StringBuilder screen = new StringBuilder();
         int weight = 2 * height - 1;
         for (int row = 0; row != height; row++) {
             for (int column = 0; column != weight; column++) {
                 if ((row >= (height - column - 1)) && ((row + height - 1) >= column)) {
+                    screen.append("^");
+                } else {
+                    screen.append(" ");
+                }
+            }
+            screen.append(System.lineSeparator());
+        }
+        return screen.toString();
+        */
+    }
+
+    /**
+     * Method loopBy
+     * @param height
+     * @param weight
+     * @param predict
+     * @return
+     */
+    private String loopBy(int height, int weight, BiPredicate<Integer, Integer> predict) {
+        StringBuilder screen = new StringBuilder();
+        for (int row = 0; row != height; row++) {
+            for (int column = 0; column != weight; column++) {
+                if (predict.test(row, column)) {
                     screen.append("^");
                 } else {
                     screen.append(" ");

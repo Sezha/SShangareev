@@ -17,7 +17,7 @@ public class Board {
         StringBuilder screen = new StringBuilder();
         String ln = System.lineSeparator();
         for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; i++) {
+            for (int j = 0; j < width; j++) {
 
                 // условие проверки, что писать пробел или X
                 // Выше в задании мы определили закономерность, когда нужно проставлять X

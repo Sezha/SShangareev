@@ -40,7 +40,7 @@ public class Point {
         double result = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 -y2, 2));
         */
 
-        return Math.sqrt(Math.pow(this.x - that.x, 2) + Math.pow(this.y -that.y, 2));
+        return Math.sqrt(Math.pow(this.x - that.x, 2) + Math.pow(this.y - that.y, 2));
     }
 
     /**

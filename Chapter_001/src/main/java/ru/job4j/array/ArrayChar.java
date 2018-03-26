@@ -21,9 +21,11 @@ public class ArrayChar {
     public boolean startWith(String prefix) {
         boolean result = true;
         char[] value = prefix.toCharArray();
-
-        // проверить. что массив data имеет первые элементы одинаковые с value
-        return ((data[0] == value[0]) && (data[1] == value[1]));
-
+        for (int i = 0; i < value.length; i++) {
+            if (data[i] != value[i]) {
+                result = false;
+            }
+        }
+        return result;
     }
 }

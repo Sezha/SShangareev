@@ -4,7 +4,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-
 /**
  * Test of class ControlTaskFromPetr
  * This test class should check new array from two equivalent arrays by ascending.

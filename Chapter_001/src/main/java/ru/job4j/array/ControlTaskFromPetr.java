@@ -7,7 +7,12 @@ package ru.job4j.array;
  * @version  1.0
  */
 public class ControlTaskFromPetr {
-
+    /**
+     * Method sortArray
+     * @param first array
+     * @param second array
+     * @return sorted array
+     */
     public int[] sortArray(int[] first, int[] second) {
         int size = first.length + second.length;
         int[] array = new int[size];

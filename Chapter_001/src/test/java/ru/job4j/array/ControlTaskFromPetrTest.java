@@ -1,7 +1,6 @@
 package ru.job4j.array;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 /**
@@ -11,7 +10,7 @@ import static org.junit.Assert.assertThat;
  * @version  1.0
  */
 public class ControlTaskFromPetrTest {
- 
+
     @Test
     public void setArrayOneWithThreeAndArrayTwoWithFore() {
         ControlTaskFromPetr  testArray = new ControlTaskFromPetr();

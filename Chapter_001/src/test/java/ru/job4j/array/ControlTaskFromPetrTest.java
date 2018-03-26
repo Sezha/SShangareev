@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
  * @version  1.0
  */
 public class ControlTaskFromPetrTest {
-
+ 
     @Test
     public void setArrayOneWithThreeAndArrayTwoWithFore() {
         ControlTaskFromPetr  testArray = new ControlTaskFromPetr();

@@ -15,25 +15,26 @@ public class ControlTaskFromPetr {
      */
     public int[] sortArray(int[] first, int[] second) {
         int size = first.length + second.length;
-        int[] array = new int[size];
-        for (int i = 0; i < size/2; i++) {
-            if (first[i] > second[i]) {
-                array[i + i] = second[i];
-                array[i + i + 1] = first[i];
+        int[] result = new int[size];
+        for (int i = 0, p = 0; i < result.length; i++, p++) {
+            if (i == first.length) {
+                p = 0;
+            }
+            if (i < first.length) {
+                result[i] = first[p];
             } else {
-                array[i + i] = first[i];
-                array[i + i + 1] = second[i];
+                result[i] = second[p];
             }
         }
         for (int index = size-1; index > 0; index--){
             for (int i = 0; i < index; i++) {
-                    if (array[i] > array[i + 1]) {
-                        int temp = array[i];
-                        array[i] = array [i + 1];
-                        array[i + 1] = temp;
+                    if (result[i] > result[i + 1]) {
+                        int temp = result[i];
+                        result[i] = result [i + 1];
+                        result[i + 1] = temp;
                     }
             }
         }
-        return array;
+        return result;
     }
 }

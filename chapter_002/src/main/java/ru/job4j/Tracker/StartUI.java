@@ -1,4 +1,5 @@
-package ru.job4j.Tracker;
+package ru.job4j.tracker;
+import java.util.Arrays;
 import java.util.Date;
 /**
  * class StartUI.
@@ -59,10 +60,10 @@ public class StartUI {
     boolean exit = false;
         while (!exit) {
              this.showMenu();
-             String answer = this.input.ask("Please input menu point :");
-             if(ADD.equals(answer)) {
+             String answer = this.input.ask("Please input menu point: ");
+             if (ADD.equals(answer)) {
                  this.createItem();
-             } else if (SHOWALL.equals(answer)){
+             } else if (SHOWALL.equals(answer)) {
                  this.showAll();
              } else if (EDIT.equals(answer)) {
                  this.editItem();
@@ -72,6 +73,8 @@ public class StartUI {
                  this.findById();
              } else if (FINDBYNAME.equals(answer)) {
                  this.findByName();
+             } else if (EXIT.equals(answer)) {
+                 exit = true;
              }
         }
     }
@@ -88,12 +91,17 @@ public class StartUI {
         System.out.println("------------ New item with getId : " + item.getId() + "-----------");
     }
     /**
-     * Method showAll.
+     * Method showAll.0
      */
     private void showAll() {
         System.out.println("----------- List of items ------------");
-        System.out.println(this.tracker.findAll());
-        System.out.println("------------ The end of list -----------");
+        for (int i = 0; i != this.tracker.findAll().length; i++) {
+            System.out.println(this.tracker.findAll()[i] + "; Name: "
+                    + this.tracker.findAll()[i].getName() + "; Description: "
+                    + this.tracker.findAll()[i].getDescription() + "; ID: "
+                    + this.tracker.findAll()[i].getId());
+        }
+        System.out.println("----------- The end of list -----------");
     }
     /**
      * Method editItem.
@@ -116,7 +124,8 @@ public class StartUI {
     private void deleteItem() {
         System.out.println("----------- Deleting item ------------");
         String nameId = this.input.ask("Input Id of item: ");
-        System.out.println("--Item with Id : " + this.tracker.findById(nameId) + " is deleted----");
+        this.tracker.delete(nameId);
+        System.out.println("--Item with Id : " + nameId + " is deleted----");
     }
     /**
      * Method findById.
@@ -137,7 +146,7 @@ public class StartUI {
     /**
      * Method showMenu.
      */
-    private void showMenu(){
+    private void showMenu() {
         System.out.println("Menu.");
         System.out.println("0. Add new Item");
         System.out.println("1. Show all items");
@@ -146,7 +155,7 @@ public class StartUI {
         System.out.println("4. Find item by Id");
         System.out.println("5. Find items by name");
         System.out.println("6. Exit Program");
-        System.out.println("Select: ");
+        System.out.println("Select");
     }
     /**
      * Main method main.

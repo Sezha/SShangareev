@@ -1,4 +1,4 @@
-package ru.job4j.Tracker;
+package ru.job4j.tracker;
 
 import java.util.*;
 
@@ -13,7 +13,7 @@ public class Tracker {
     private Item[] items = new Item[100];
     private int position = 0;
     private static final Random RN = new Random();
-    /*
+    /**
      * Method add.
      * add new item.
      * @param item.
@@ -24,21 +24,22 @@ public class Tracker {
         this.items[position++] = item;
         return item;
     }
-    /*
+    /**
      * Method replace.
      * replace item by id.
      * @param id, item.
      * @return item.
      */
     public void replace(String id, Item item) {
-          for (int index =0; index != this.position; index ++) {
+          for (int index = 0; index != this.position; index++) {
             if (items[index].getId().equals(id)) {
+                item.setId(items[index].getId());
                 items[index] = item;
                 break;
             }
           }
     }
-    /*
+    /**
      * Method delete.
      * delete item by id.
      * @param id.
@@ -48,7 +49,7 @@ public class Tracker {
         int index = 0;
         for (Item item : items) {
             if (item.getId().equals(id)) {
-                System.arraycopy(items, index + 1, items, index, (items.length-1-index));
+                System.arraycopy(items, index + 1, items, index, (items.length - 1 - index));
                 break;
             } else {
                 items[index] = item;
@@ -56,7 +57,7 @@ public class Tracker {
             }
         }
     }
-    /*
+    /**
      * Method findAll.
      * find all items.
      * @return array of items.
@@ -68,7 +69,7 @@ public class Tracker {
         }
         return result;
     }
-    /*
+    /**
      * Method findByName.
      * find item by name.
      * @param key.
@@ -85,7 +86,8 @@ public class Tracker {
         }
         return result;
     }
-    /* Method findById.
+    /**
+     *  Method findById.
      * find item by Id.
      * @param id.
      * @return item.
@@ -100,11 +102,12 @@ public class Tracker {
         }
         return result;
     }
-    /* Method generateId.
+    /**
+     * Method generateId.
      * create random Id.
      * @return id.
      */
-    String generateId(){
+    String generateId() {
         return String.valueOf(System.currentTimeMillis() + RN.nextInt());
     }
 }

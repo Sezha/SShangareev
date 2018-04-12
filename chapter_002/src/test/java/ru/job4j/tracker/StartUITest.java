@@ -70,7 +70,7 @@ public class StartUITest {
      * test of method FindById.
      */
     @Test
-    public void whenAddTwoItemsFindByIDFirstItem(){
+    public void whenAddTwoItemsFindByIDFirstItem() {
         Input input = new StubInput(new String[]{"0", "test name two", "desc", "6"});
         new StartUI(input, tracker).init();
         assertThat(tracker.findById(tracker.findAll()[0].getId()), is(item));
@@ -79,7 +79,7 @@ public class StartUITest {
      * test of method FindByName.
      */
     @Test
-    public void whenAddThreeItemsFindByNameSecondItem(){
+    public void whenAddThreeItemsFindByNameSecondItem() {
         Input input = new StubInput(new String[]{"0", "test name two", "desc2", "6"});
         Input input2 = new StubInput(new String[]{"0", "test name three", "desc3", "6"});
         new StartUI(input, tracker).init();

@@ -6,12 +6,11 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-
 /**
  * class StartUITest.
  * test of class StartUI.
  * @author Sergei Shangareev (sezhaekb@gmail.com)
- * @version 1.0.
+ * @version 2.0.
  */
 public class StartUITest {
     private final Tracker tracker = new Tracker();

@@ -1,4 +1,5 @@
 package ru.job4j.tracker;
+
 /**
  * interface UserAction.
  * @author Sergei Shangareev (sezhaekb@gmail.com).

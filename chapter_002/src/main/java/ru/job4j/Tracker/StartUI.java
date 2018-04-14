@@ -13,7 +13,6 @@ public class StartUI {
        this.input = input;
        this.tracker = tracker;
    }
-
     /**
      * method init.
      */
@@ -28,7 +27,6 @@ public class StartUI {
            menu.select(key);
        } while (key != 6);
    }
-
     /**
      * main method.
      * @param args

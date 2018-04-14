@@ -130,7 +130,9 @@ public class MenuTracker {
         }
         public void execute(Input input, Tracker tracker) {
             String   id = input.ask("Please, enter the task's ID: ");
-            tracker.findById(id);
+            System.out.println(
+                    String.format("%s. %s. %s", tracker.findById(id).getId(), tracker.findById(id).getName(), tracker.findById(id).getDescription())
+            );
         }
         public String info() {
             return String.format("%s. %s", this.key(), "Find the item by ID.");
@@ -145,7 +147,13 @@ public class MenuTracker {
         }
         public void execute(Input input, Tracker tracker) {
             String name = input.ask("Please, enter the task's name: ");
-            tracker.findByName(name);
+            for (Item item : tracker.findAll()) {
+                if (item.getName().equals(name)) {
+                System.out.println(
+                        String.format("%s. %s. %s", item.getId(), item.getName(), item.getDescription())
+                );
+                }
+            }
         }
         public String info() {
             return String.format("%s. %s", this.key(), "Find the item by Name.");
@@ -159,7 +167,6 @@ public class MenuTracker {
             return 6;
         }
         public void execute(Input input, Tracker tracker) {
-            String name = input.ask("Do you really want to exit?  ");
         }
         public String info() {
             return String.format("%s. %s", this.key(), "Exit Program.");

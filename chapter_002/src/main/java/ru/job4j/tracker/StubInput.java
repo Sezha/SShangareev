@@ -1,18 +1,35 @@
 package ru.job4j.tracker;
 
-
-
+/**
+ * class StubInput.
+ * @author Sergei Shangareev (sezhaekb@gmail.com).
+ * @version 1.0.
+ */
 public class StubInput implements Input {
+    private final String[] answers;
+    private int position = 0;
 
-    private final String[] value;
-    private int position;
-
-    public StubInput(final String[] value) {
-        this.value = value;
+    /**
+     * constructor of class StubInput.
+     * @param answers
+     */
+    public StubInput(String[] answers) {
+        this.answers = answers;
+    }
+    /**
+     * method String ask.
+     */
+    public String ask(String question) {
+        return this.answers[position++];
     }
 
-    @Override
-    public String ask(String question) {
-        return this.value[position++];
+    /**
+     * method int ask.
+     * @param question
+     * @param range
+     * @return
+     */
+    public int ask(String question, int[] range) {
+        return  -1;
     }
 }

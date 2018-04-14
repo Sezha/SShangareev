@@ -31,7 +31,7 @@ class EditItem implements UserAction {
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    private UserAction[] actions = new UserAction[7];
+    public UserAction[] actions = new UserAction[7];
     /**
      * constructor of class MenuTracker.
      * @param input

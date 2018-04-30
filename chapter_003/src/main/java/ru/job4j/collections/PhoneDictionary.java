@@ -25,9 +25,9 @@ public class PhoneDictionary {
         List<Person> result = new ArrayList<>();
         for (Person value : persons) {
             if (persons.iterator().next().getName().contains(key)
-                    ||persons.iterator().next().getSurname().contains(key)
-                    ||persons.iterator().next().getPhone().contains(key)
-                    ||persons.iterator().next().getAddress().contains(key)) {
+                    || persons.iterator().next().getSurname().contains(key)
+                    || persons.iterator().next().getPhone().contains(key)
+                    || persons.iterator().next().getAddress().contains(key)) {
                 result.add(value);
                 break;
             }

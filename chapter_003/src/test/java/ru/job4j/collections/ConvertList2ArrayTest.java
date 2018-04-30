@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
  * test of class ConvertList2Array.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
  * @version 1.0.
- * @since 04.29.2018.
+ * @since 04.30.2018.
  */
 public class ConvertList2ArrayTest {
     @Test

@@ -2,11 +2,14 @@ package ru.job4j.tracker;
 
 import com.sun.xml.internal.rngom.parse.host.Base;
 
+import java.util.ArrayList;
+
 /**
  * class EditItem.
  * external class for method fillActions.
  * @author Sergei Shangangareev (sezhaekb@gmail.com).
- * @version 1.0.
+ * @version 2.0.
+ * @since 05/01/2018.
  */
 class EditItem extends BaseAction {
     public EditItem(int key, String name) {
@@ -26,12 +29,13 @@ class EditItem extends BaseAction {
 /**
  * class MenuTracker.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
+ * @version 2.0.
+ * @since 05/01/2018.
  */
 public class MenuTracker {
     private Input input;
     private Tracker tracker;
-    public UserAction[] actions = new UserAction[7];
+    public ArrayList<UserAction> actions = new ArrayList<>(7);
     int position = 0;
     /**
      * constructor of class MenuTracker.
@@ -47,23 +51,23 @@ public class MenuTracker {
      * structure of menu.
      */
     public void fillActions() {
-        this.actions[position++] = this.new AddItem(0, "Add the new item.");
-        this.actions[position++] = new MenuTracker.ShowAllItems(1, "Show all items.");
-        this.actions[position++] = new EditItem(2, "Edit Item.");
-        this.actions[position++] = this.new DeleteItem(3, "Delete Item.");
-        this.actions[position++] = this.new FindItemById(4, "Find Item by Id");
-        this.actions[position++] = this.new FindItemByName(5, "Find Item by Name");
-        this.actions[position++] = this.new Exit(6, "Exit program.");
+        actions.add(position++, this.new AddItem(0, "Add the new item."));
+        actions.add(position++, new MenuTracker.ShowAllItems(1, "Show all items."));
+        actions.add(position++, new EditItem(2, "Edit Item."));
+        actions.add(position++, this.new DeleteItem(3, "Delete Item."));
+        actions.add(position++, this.new FindItemById(4, "Find Item by Id"));
+        actions.add(position++, this.new FindItemByName(5, "Find Item by Name"));
+        actions.add(position++, this.new Exit(6, "Exit program."));
     }
     public void addAction(UserAction action) {
-        this.actions[position++] = action;
+        actions.add(position++, action);
     }
     /**
      * method select.
      * @param key
      */
     public void select(int key) {
-        this.actions[key].execute(this.input, this.tracker);
+        actions.get(key).execute(this.input, this.tracker);
     }
     /**
      * method show.

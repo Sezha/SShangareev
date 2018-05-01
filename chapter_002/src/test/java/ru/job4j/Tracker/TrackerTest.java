@@ -1,6 +1,11 @@
-package ru.job4j.Tracker;
+package ru.job4j.tracker;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -8,7 +13,8 @@ import static org.junit.Assert.*;
  * Test Tracker.
  * Test all method of class tracker.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
+ * @version 2.0.
+ * @since 05/01/2018.
  */
 public class TrackerTest {
 
@@ -17,7 +23,7 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item item = new Item("test1", "testDescription", 123L);
         tracker.add(item);
-        assertThat(tracker.findAll()[0], is(item));
+        assertThat(tracker.findAll().get(0), is(item));
     }
 
     @Test
@@ -41,7 +47,7 @@ public class TrackerTest {
         Item third = new Item("test3", "testDescription3", 12345L);
         tracker.add(third);
         tracker.delete(second.getId());
-        Item[] expect = {first, third, null};
+        List<Item> expect = Arrays.asList(first, third);
         assertThat(tracker.findAll(), is(expect));
     }
 
@@ -56,7 +62,7 @@ public class TrackerTest {
         tracker.add(third);
         Item fourth = new Item("test4", "testDescription4", 123456L);
         tracker.add(fourth);
-        Item[] expect = {first, second, third, fourth};
+        List<Item> expect = Arrays.asList(first, second, third, fourth);
         assertThat(tracker.findAll(), is(expect));
     }
 
@@ -73,7 +79,7 @@ public class TrackerTest {
         tracker.add(fourth);
         Item fifth = new Item("test3", "testDescription5", 12345L);
         tracker.add(fifth);
-        Item[] expect = {third, fifth, null, null, null};
+        List<Item> expect = Arrays.asList(third, fifth);
         assertThat(tracker.findByName(third.getName()), is(expect));
     }
 
@@ -90,7 +96,6 @@ public class TrackerTest {
         tracker.add(fourth);
         Item fifth = new Item("test3", "testDescription5", 12345L);
         tracker.add(fifth);
-        //Item[] expect = {first, fifth, null, null, null};
         assertThat(tracker.findById(first.getId()), is(first));
     }
 }

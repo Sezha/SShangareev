@@ -2,26 +2,26 @@ package ru.job4j.tracker;
 
 import java.util.*;
 
-
 /**
  * class Tracker.
  * Menu of items.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
+ * @version 2.0.
+ * @since 05/01/2018.
  */
 public class Tracker {
-    private Item[] items = new Item[100];
+    ArrayList<Item> items = new ArrayList<>();
     private int position = 0;
     private static final Random RN = new Random();
     /**
      * Method add.
      * add new item.
-     * @param item.
+     * @param item new item.
      * @return item.
      */
     public Item add(Item item) {
         item.setId(this.generateId());
-        this.items[position++] = item;
+        items.add(position++, item);
         return item;
     }
     /**
@@ -31,56 +31,53 @@ public class Tracker {
      * @return item.
      */
     public void replace(String id, Item item) {
-          for (int index = 0; index != this.position; index++) {
-            if (items[index].getId().equals(id)) {
-                item.setId(items[index].getId());
-                items[index] = item;
-                break;
-            }
+          for (Item element : items) {
+              if (element.getId().contains(id)) {
+                  items.set(items.indexOf(element), item);
+                  break;
+              }
           }
     }
     /**
      * Method delete.
      * delete item by id.
-     * @param id.
+     * @param id id of item.
      * @return item.
      */
     public void delete(String id) {
-        int index = 0;
-        for (Item item : items) {
-            if (item.getId().equals(id)) {
-                System.arraycopy(items, index + 1, items, index, (items.length - 1 - index));
-                break;
-            } else {
-                items[index] = item;
-                index++;
+        for (Item element : items) {
+            if (element.getId().contains(id)) {
+                    items.remove(element);
             }
         }
+
     }
     /**
      * Method findAll.
      * find all items.
      * @return array of items.
      */
-    public Item[] findAll() {
-        Item[] result = new Item[this.position];
-        for (int index = 0; index != this.position; index++) {
-                result[index] = this.items[index];
-        }
+    public ArrayList<Item> findAll() {
+        ArrayList<Item> result = new ArrayList<Item>();
+        int count =0;
+        for (Item element : items) {
+                result.add(count, element);
+                count++;
+            }
         return result;
     }
     /**
      * Method findByName.
      * find item by name.
-     * @param key.
+     * @param key key name.
      * @return arrray of items.
      */
-    public Item[] findByName(String key) {
-        Item[] result = new Item[this.position];
+    public ArrayList<Item> findByName(String key) {
+        ArrayList<Item> result = new ArrayList<Item>();
         int count = 0;
-        for (int index = 0; index != this.position; index++) {
-            if (this.items[index].getName().equals(key)) {
-                result[count] = this.items[index];
+        for (Item element : items) {
+            if (element.getName().contains(key)) {
+                result.add(count, element);
                 count++;
             }
         }
@@ -89,7 +86,7 @@ public class Tracker {
     /**
      *  Method findById.
      * find item by Id.
-     * @param id.
+     * @param id id of item.
      * @return item.
      */
     protected Item findById(String id) {

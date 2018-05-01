@@ -1,7 +1,12 @@
 package ru.job4j.collections;
 
 import org.junit.Test;
+import ru.job4j.list.ConvertMatrix2List;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -65,6 +70,22 @@ public class ConvertList2ArrayTest {
         int[][] expect = {
                 {0, 1, 2, 3, 4, 5}
         };
+        assertThat(result, is(expect));
+    }
+
+    /**
+     * test of method convert.
+     */
+    @Test
+    public void whenTwoArraysWithThreeAndFiveIntegersThenListEight() {
+        ConvertList2Array listTwo = new ConvertList2Array();
+        List<int[]> list = new ArrayList<>();
+        list.add(new int[]{1, 2, 3});
+        list.add(new int[]{5, 0, 2, 4, 3});
+        List<Integer> result = listTwo.convert(list);
+        List<Integer> expect = Arrays.asList(
+                1, 2, 3, 5, 0, 2, 4, 3
+        );
         assertThat(result, is(expect));
     }
 }

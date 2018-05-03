@@ -38,7 +38,6 @@ public class UserForSort implements Comparable<UserForSort> {
     public int getAge() {
         return age;
     }
-
     @Override
     public int compareTo(UserForSort o) {
         return this.age.compareTo(o.age);

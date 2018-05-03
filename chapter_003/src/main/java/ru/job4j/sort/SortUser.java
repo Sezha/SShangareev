@@ -15,13 +15,6 @@ public class SortUser {
      * @return sorted by age set of users.
      */
         public Set<UserForSort> sort(List<UserForSort> list) {
-            Set<UserForSort> users = new TreeSet<UserForSort>(new Comparator<UserForSort>() {
-                @Override
-                public int compare(UserForSort o1, UserForSort o2) {
-                    return o1.age.compareTo(o2.age);
-                }
-            });
-            users.addAll(list);
-            return users;
+            return new TreeSet<>(list);
         }
 }

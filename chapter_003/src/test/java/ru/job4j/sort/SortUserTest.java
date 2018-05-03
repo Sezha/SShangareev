@@ -13,21 +13,14 @@ import static org.junit.Assert.*;
  * @since 05/02/2018.
  */
 public class SortUserTest {
-
     @Test
-    public void whenThreeUsersTHenShowAllAscendingByAge() {
+    public void whenThreeUsersThenShowAllAscendingByAge() {
         SortUser sortList = new SortUser();
-        List<UserForSort> listUsers = new LinkedList<UserForSort>();
+        List<UserForSort> listUsers = new ArrayList<>();
         listUsers.add(new UserForSort("Sergei", 33));
         listUsers.add(new UserForSort("Misha", 15));
         listUsers.add(new UserForSort("Stepan", 20));
         Set<UserForSort> result = sortList.sort(listUsers);
-        List<UserForSort> listUsersSorted = new LinkedList<UserForSort>();
-        listUsersSorted.add(new UserForSort("Misha", 15));
-        listUsersSorted.add(new UserForSort("Stepan", 20));
-        listUsersSorted.add(new UserForSort("Sergei", 33));
-        Set<UserForSort> expect = new TreeSet<UserForSort>();
-        expect.addAll(listUsersSorted);
-        assertThat(result, is(expect));
+        assertThat(result.iterator().next().getAge(), is(15));
     }
 }

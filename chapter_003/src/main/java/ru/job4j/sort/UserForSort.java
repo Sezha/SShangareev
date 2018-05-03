@@ -9,8 +9,8 @@ import java.util.Comparator;
  * @since 05/02/2018.
  */
 public class UserForSort implements Comparable<UserForSort> {
-    public String name;
-    public Integer age;
+    private String name;
+    private Integer age;
     /**
      * constructor of class UserForSort.
      * @param name name of user.
@@ -41,6 +41,6 @@ public class UserForSort implements Comparable<UserForSort> {
 
     @Override
     public int compareTo(UserForSort o) {
-        return 0;
+        return this.age.compareTo(o.age);
     }
 }

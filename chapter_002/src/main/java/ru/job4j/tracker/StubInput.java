@@ -19,6 +19,7 @@ public class StubInput implements Input {
     /**
      * method String ask.
      */
+    @Override
     public String ask(String question) {
         return this.answers[position++];
     }
@@ -30,6 +31,18 @@ public class StubInput implements Input {
      * @return
      */
     public int ask(String question, int[] range) {
-        return  -1;
+        int key = Integer.valueOf(this.ask(question));
+        boolean exist = false;
+        for (int value : range) {
+            if (value == key) {
+                exist = true;
+                break;
+            }
+        }
+        if (exist) {
+            return key;
+        } else {
+            throw new MenuOutException("Out of menu range");
+        }
     }
 }

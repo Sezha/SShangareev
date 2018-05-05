@@ -24,7 +24,7 @@ public class SortUser {
      * @return list sorted by length of user's name.
      */
         public List<UserForSort> sortNameLength(List<UserForSort> list) {
-            Collections.sort(list, new Comparator<UserForSort>() {
+            list.sort(new Comparator<UserForSort>() {
                         @Override
                         public int compare(UserForSort o1, UserForSort o2) {
                             return o1.getName().compareTo(o2.getName());
@@ -40,7 +40,7 @@ public class SortUser {
      * @return
      */
     public List<UserForSort> sortByAllFields(List<UserForSort> list) {
-        Collections.sort(list, new Comparator<UserForSort>() {
+        list.sort(new Comparator<UserForSort>() {
             @Override
             public int compare(UserForSort o1, UserForSort o2) {
                 int result = o1.getName().compareTo(o2.getName());

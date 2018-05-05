@@ -1,7 +1,6 @@
 package ru.job4j.collections;
 
 import org.junit.Test;
-import ru.job4j.list.ConvertMatrix2List;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,8 +12,8 @@ import static org.junit.Assert.assertThat;
 /**
  * test of class ConvertList2Array.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
- * @since 04.30.2018.
+ * @version 2.0.
+ * @since 05.05.2018.
  */
 public class ConvertList2ArrayTest {
     @Test

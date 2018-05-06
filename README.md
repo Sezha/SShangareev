@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Sezha/SShangareev.svg?branch=master)](https://travis-ci.org/Sezha/SShangareev)
+[![codecov](https://codecov.io/gh/Sezha/SShangareev/branch/master/graph/badge.svg)](https://codecov.io/gh/Sezha/SShangareev)
+
 # SShangareev
 Всем доброго утра и будьте благополучными!!
 По заданию: 

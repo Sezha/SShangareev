@@ -5,40 +5,23 @@ import java.util.Comparator;
 /**
  * class ListCompare.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
- * @since 05/04/2018.
+ * @version 2.0.
+ * @since 05/07/2018.
  */
 public class ListCompare implements Comparator<String> {
     @Override
     public int compare(String left, String right) {
-        int result = -1;
-        if (Integer.compare(left.length(), right.length()) == 0) {
-            for (int i = 0; i < left.length(); i++) {
-                if (Character.compare(left.charAt(i), right.charAt(i)) != 0) {
-                    result = Character.compare(left.charAt(i), right.charAt(i));
-                    break;
-                } else {
-                    result = Integer.compare(left.length(), right.length());
-                }
+
+        int size = Math.min(left.length(), right.length());
+        int result = 0;
+        for (int i = 0; i < size; i++) {
+            result = Integer.compare(left.charAt(i), right.charAt(i));
+            if (result != 0) {
+                break;
             }
-        } else if (Integer.compare(left.length(), right.length()) > 0) {
-            for (int i = 0; i < right.length(); i++) {
-                if (Character.compare(left.charAt(i), right.charAt(i)) != 0) {
-                    result = Character.compare(left.charAt(i), right.charAt(i));
-                    break;
-                } else {
-                    result = Integer.compare(left.length(), right.length());
-                }
-            }
-        } else if (Integer.compare(left.length(), right.length()) < 0) {
-            for (int i = 0; i < left.length(); i++) {
-                if (Character.compare(left.charAt(i), right.charAt(i)) != 0) {
-                    result = Character.compare(left.charAt(i), right.charAt(i));
-                    break;
-                } else {
-                    result = Integer.compare(left.length(), right.length());
-                }
-            }
+        }
+        if (result == 0 && left.length() != right.length()) {
+            result = Integer.compare(left.length(), right.length());
         }
         return result;
     }

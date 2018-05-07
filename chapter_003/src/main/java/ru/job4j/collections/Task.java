@@ -2,8 +2,8 @@ package ru.job4j.collections;
 /**
  * class Task.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
- * @since 04.29.2018.
+ * @version 2.0.
+ * @since 05.07.2018.
  */
 public class Task {
     private String desc;

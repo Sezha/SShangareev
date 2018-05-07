@@ -6,37 +6,25 @@ import java.util.LinkedList;
 /**
  * class PriorityQueue.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
- * @since 04.29.2018.
+ * @version 2.0.
+ * @since 05.07.2018.
  */
 public class PriorityQueue {
     private LinkedList<Task> tasks = new LinkedList<>();
 
     /**
      * method put.
-     * @param task
+     * @param task task.
      */
     public void put(Task task) {
-        int position = 0;
-        if (tasks.isEmpty()) {
-            tasks.add(position, task);
-            position++;
-        } else if (tasks.size() < 2 & task.getPriority() > tasks.get(position).getPriority()) {
-            tasks.add(position++, task);
-        } /*else if (tasks.size() < 2 & task.getPriority() < tasks.get(position).getPriority()) {
-            Task temp = tasks.get(position);
-            tasks.set(position, task);
-            tasks.add(position++, temp);
-        } else if (tasks.size() >= 3 & task.getPriority() < tasks.get(position).getPriority()
-                & task.getPriority() > tasks.get(position - 1).getPriority()) {
-            Task temp = tasks.get(position);
-            tasks.set(position, task);
-            tasks.add(position++, temp);
-        } else if (tasks.size() >= 3 & task.getPriority() > tasks.get(position).getPriority()) {
-            tasks.add(position++, task);
-
-        }*/
-
+        int size = this.tasks.size();
+        for (int index = 0; index != size; index++) {
+                if (tasks.get(index).getPriority() > task.getPriority()) {
+                    tasks.add(index, task);
+                    break;
+                }
+            }
+        tasks.add(size, task);
     }
 
     /**

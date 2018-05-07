@@ -8,7 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /**
  * class ListCompareTest.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
+ * @version 1.1.
  * @since 05/04/2018.
  */
 public class ListCompareTest {

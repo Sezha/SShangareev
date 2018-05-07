@@ -5,7 +5,7 @@ import java.util.Comparator;
 /**
  * class ListCompare.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 2.1.
+ * @version 2.2.
  * @since 05/07/2018.
  */
 public class ListCompare implements Comparator<String> {

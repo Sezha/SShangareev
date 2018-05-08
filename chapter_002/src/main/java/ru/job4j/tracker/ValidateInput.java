@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 /**
  * class ValidateInput.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
+ * @version 2.0.
  */
 public class ValidateInput implements Input {
     private final Input input;
@@ -14,7 +14,7 @@ public class ValidateInput implements Input {
     public String ask(String question) {
         return this.input.ask(question);
     }
-    public int ask(String question, int[] range) {
+    public int ask(String question, int[] range)  {
         boolean invalid = true;
         int value = -1;
         do {
@@ -30,3 +30,17 @@ public class ValidateInput implements Input {
         return value;
     }
 }
+
+
+
+        /*//if (!(input.ask(question).equals("invalid"))) {
+            if (!(this.input.ask(question, range) > 6 &  this.input.ask(question, range) < 0)) {
+                value = this.input.ask(question, range);
+            } else {
+                throw new MenuOutException("Please select key from menu.");
+            }
+            invalid = true;
+       // } else {
+       //     throw new NumberFormatException("Please enter validate data again.");
+       // }
+*/

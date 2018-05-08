@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.is;
 /**
  *  class ValidateInputTest.
  *  @author Sergei Shangareev(sezhaekb@gmail.com).
- *  @version 1.0.
+ *  @version 2.0.
  */
 public class ValidateInputTest {
 

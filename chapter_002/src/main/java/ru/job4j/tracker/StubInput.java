@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 /**
  * class StubInput.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
+ * @version 2.0.
  */
 public class StubInput implements Input {
     private final String[] answers;

@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 /**
  * class Item.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
+ * @version 1.1.
  */
 public class Item {
     private String id;

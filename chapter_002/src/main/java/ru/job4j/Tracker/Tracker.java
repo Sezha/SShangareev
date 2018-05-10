@@ -6,7 +6,7 @@ import java.util.*;
  * class Tracker.
  * Menu of items.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 2.0.
+ * @version 2.1.
  * @since 05/01/2018.
  */
 public class Tracker {

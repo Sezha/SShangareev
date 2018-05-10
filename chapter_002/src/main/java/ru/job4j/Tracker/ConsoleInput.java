@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * class ConsoleInput.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 1.0.
+ * @version 1.1.
  */
 public class ConsoleInput implements Input {
     private Scanner scanner = new Scanner(System.in);

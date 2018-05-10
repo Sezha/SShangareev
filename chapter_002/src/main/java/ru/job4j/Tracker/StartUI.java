@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * class StartUI.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 2.0.
+ * @version 2.1.
  */
 public class StartUI {
    private int[] ranges = {0, 1, 2, 3, 4, 5, 6};

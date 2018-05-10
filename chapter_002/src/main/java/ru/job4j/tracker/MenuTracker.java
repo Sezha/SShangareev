@@ -7,7 +7,7 @@ import java.util.Iterator;
  * class EditItem.
  * external class for method fillActions.
  * @author Sergei Shangangareev (sezhaekb@gmail.com).
- * @version 2.0.
+ * @version 2.1.
  * @since 05/01/2018.
  */
 class EditItem extends BaseAction {

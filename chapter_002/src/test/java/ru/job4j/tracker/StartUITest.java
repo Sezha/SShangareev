@@ -27,10 +27,9 @@ public class StartUITest {
      */
     @Test
     public void whenUserAddTwoItemsThenTrackerHasSecondItemWithSameName() {
-        //Tracker tracker = new Tracker();
         Input input = new StubInput(new String[]{"0", "test name two", "desc", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll()[1].getName(), is("test name two"));
+        assertThat(tracker.findAll().get(1).getName(), is("test name two"));
         }
     /**
      * test of method editItem.
@@ -53,7 +52,7 @@ public class StartUITest {
         Item item2 = tracker.add(new Item());
         Input input = new StubInput(new String[]{"3", item.getId(), "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll()[0].getId(), is(item2.getId()));
+        assertThat(tracker.findAll().get(0).getId(), is(item2.getId()));
     }
     /**
      * test of method showAll.
@@ -63,16 +62,23 @@ public class StartUITest {
         //Item item = tracker.add(new Item());
         Input input = new StubInput(new String[]{"1", "test name", "desc", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll()[0], is(item));
+        assertThat(tracker.findAll().get(0).getName(), is("test name"));
     }
     /**
      * test of method FindById.
      */
     @Test
     public void whenAddTwoItemsFindByIDFirstItem() {
-        Input input = new StubInput(new String[]{"0", "test name two", "desc", "6"});
+        //Input input = new StubInput(new String[]{"0", "test name two", "desc", "6"});
+        Tracker tracker = new Tracker();
+        Item first = new Item("test1", "testDescription", 123L);
+        tracker.add(first);
+        Item second = new Item("test2", "testDescription2", 1234L);
+        tracker.add(second);
+        String id = first.getId();
+        Input input = new StubInput(new String[]{"0", id, "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById(tracker.findAll()[0].getId()), is(item));
+        assertThat(tracker.findById(tracker.findAll().get(0).getId()), is(first));
     }
     /**
      * test of method FindByName.
@@ -83,6 +89,6 @@ public class StartUITest {
         Input input2 = new StubInput(new String[]{"0", "test name three", "desc3", "6"});
         new StartUI(input, tracker).init();
         new StartUI(input2, tracker).init();
-        assertThat(tracker.findAll()[1].getName(), is("test name two"));
+        assertThat(tracker.findAll().get(0).getName(), is("test name two"));
     }
 }

@@ -1,8 +1,7 @@
 package ru.job4j.tracker;
 
-import com.sun.xml.internal.rngom.parse.host.Base;
-
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * class EditItem.
@@ -79,6 +78,7 @@ public class MenuTracker {
             }
         }
     }
+
     /**
      * method AddItem.
      */

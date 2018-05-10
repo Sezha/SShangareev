@@ -21,7 +21,7 @@ public class ConvertList2Array {
         Integer[] temp = new Integer[list.size()];
         temp = list.toArray(temp);
         int index = 0;
-        int cells = (int) Math.ceil((double)list.size() / rows);
+        int cells = (int) Math.ceil((double) list.size() / rows);
         int[][] array = new int[rows][cells];
         for (int i = 0; i < rows; i++) {
             for (int k = 0; k < cells; k++) {

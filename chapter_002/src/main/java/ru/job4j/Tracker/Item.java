@@ -1,4 +1,4 @@
-package ru.job4j.Tracker;
+package ru.job4j.tracker;
 
 /**
  * class Item.
@@ -12,7 +12,7 @@ public class Item {
     public long create;
     public Item() {
     }
-		public Item (String name, String description, long create) {
+		public Item(String name, String description, long create) {
             this.name = name;
             this.description = description;
             this.create = create;

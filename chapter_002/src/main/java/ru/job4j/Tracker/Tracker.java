@@ -59,7 +59,7 @@ public class Tracker {
      */
     public ArrayList<Item> findAll() {
         ArrayList<Item> result = new ArrayList<Item>();
-        int count =0;
+        int count = 0;
         for (Item element : items) {
                 result.add(count, element);
                 count++;

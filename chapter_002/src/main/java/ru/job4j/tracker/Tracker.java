@@ -6,7 +6,7 @@ import java.util.*;
  * class Tracker.
  * Menu of items.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 2.1.
+ * @version 2.2.
  * @since 05/01/2018.
  */
 public class Tracker {
@@ -46,11 +46,10 @@ public class Tracker {
      */
     public void delete(String id) {
         for (Item element : items) {
-            if (element.getId().contains(id)) {
+            if (element.getId().equals(id)) {
                     items.remove(element);
             }
         }
-
     }
     /**
      * Method findAll.

@@ -25,5 +25,5 @@ hs_err_pid*
 -target
 .idea
 *.iml
-
+chapter_002/src/main/java/ru/job4j/Tracker/
 target

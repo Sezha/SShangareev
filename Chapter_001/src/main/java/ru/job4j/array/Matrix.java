@@ -16,7 +16,7 @@ public class Matrix {
      * @return Two-dimensional array
      */
     public int[][] multiple(int size) {
-       int[][] arrayMatrix = new int [size][size];
+       int[][] arrayMatrix = new int[size][size];
 
 
         for (int row = 1; row < size; row++) {

@@ -6,7 +6,7 @@ import java.util.*;
  * class Tracker.
  * Menu of items.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 2.1.
+ * @version 2.2.
  * @since 05/01/2018.
  */
 public class Tracker {
@@ -31,12 +31,12 @@ public class Tracker {
      * @return item.
      */
     public void replace(String id, Item item) {
-          for (Item element : items) {
-              if (element.getId().contains(id)) {
-                  items.set(items.indexOf(element), item);
-                  break;
-              }
-          }
+        for (Item element : items) {
+            if (element.getId().contains(id)) {
+                items.set(items.indexOf(element), item);
+                break;
+            }
+        }
     }
     /**
      * Method delete.
@@ -46,11 +46,10 @@ public class Tracker {
      */
     public void delete(String id) {
         for (Item element : items) {
-            if (element.getId().contains(id)) {
-                    items.remove(element);
+            if (element.getId().equals(id)) {
+                items.remove(element);
             }
         }
-
     }
     /**
      * Method findAll.
@@ -61,9 +60,9 @@ public class Tracker {
         ArrayList<Item> result = new ArrayList<Item>();
         int count = 0;
         for (Item element : items) {
-                result.add(count, element);
-                count++;
-            }
+            result.add(count, element);
+            count++;
+        }
         return result;
     }
     /**

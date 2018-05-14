@@ -18,7 +18,7 @@ public class Square {
 		final int EXPONENT = 2;
 			for (int i = 2; i <= bound; i++) {
                 result[0] = 1;
-                result[i-1] = (int) Math.pow(i, EXPONENT);
+                result[i - 1] = (int) Math.pow(i, EXPONENT);
             }
 			return result;
 	}

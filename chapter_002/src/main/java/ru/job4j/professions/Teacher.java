@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.professions;
 
 /**
 * Class Teacher.
@@ -16,7 +16,7 @@ public class Teacher extends Profession {
 	* build Home
 	* @return object.
 	*/
-	public String teachStudent(Student Student) {
+	public String teachStudent(Student student) {
 		return subject;
 	}
 

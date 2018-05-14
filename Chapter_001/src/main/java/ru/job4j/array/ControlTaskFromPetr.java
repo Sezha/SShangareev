@@ -26,7 +26,7 @@ public class ControlTaskFromPetr {
                 result[i] = second[p];
             }
         }
-        for (int index = size-1; index > 0; index--){
+        for (int index = size - 1; index > 0; index--) {
             for (int i = 0; i < index; i++) {
                     if (result[i] > result[i + 1]) {
                         int temp = result[i];

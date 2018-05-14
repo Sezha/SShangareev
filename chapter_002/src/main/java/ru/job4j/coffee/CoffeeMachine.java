@@ -10,23 +10,23 @@ public class CoffeeMachine {
     /**
      * coin ONECOIN with value of one.
      */
-    final int ONECOIN = 1;
+    private static final int ONECOIN = 1;
     /**
      * coin TWOCOIN with value of two.
      */
-    final int TWOCOIN = 2;
+    private static final int TWOCOIN = 2;
     /**
      * coin FIVECOIN with value of five.
      */
-    final int FIVECOIN = 5;
+    private static final int FIVECOIN = 5;
     /**
      * coin TENCOIN with value of ten.
      */
-    final int TENCOIN = 10;
+    private static final int TENCOIN = 10;
     /**
      * array of coins by ascending.
      */
-    int[] coins = new int[4];
+    private int[] coins = new int[4];
 
     /**
      * method changes.
@@ -65,8 +65,8 @@ public class CoffeeMachine {
     public int checkFiveCoin(int rest) {
         int counter = 0;
         if (rest % 10 != 0) {
-            int temp = rest - TENCOIN*checkTenCoin(rest);
-            while (temp > 4 ) {
+            int temp = rest - TENCOIN * checkTenCoin(rest);
+            while (temp > 4) {
                 temp = temp - FIVECOIN;
                 counter++;
             }
@@ -98,7 +98,7 @@ public class CoffeeMachine {
      */
     public int checkOneCoin(int rest) {
         int counter = 0;
-        int temp = rest - TENCOIN * checkTenCoin(rest) - FIVECOIN * checkFiveCoin(rest) - TWOCOIN*checkTwoCoin(rest);
+        int temp = rest - TENCOIN * checkTenCoin(rest) - FIVECOIN * checkFiveCoin(rest) - TWOCOIN * checkTwoCoin(rest);
         while (temp != 0) {
             temp = temp - ONECOIN;
             counter++;

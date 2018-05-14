@@ -15,17 +15,17 @@ public class ArrayDuplicate {
      * @param array
      * @return
      */
-    public String[] remove(String[] array){
+    public String[] remove(String[] array) {
         //length of array.
         int sizeOfArray = array.length;
         //out circle.
-        for (int out = 0; out <sizeOfArray; out++) {
+        for (int out = 0; out < sizeOfArray; out++) {
             //in circle.
-            for (int in = out +1; in <sizeOfArray; in++){
+            for (int in = out + 1; in < sizeOfArray; in++) {
 
                 if (array[out].equals(array[in])) {
                     //change index of item of array.
-                    array[in] = array[sizeOfArray-1];
+                    array[in] = array[sizeOfArray - 1];
                     //reduce length of array.
                     sizeOfArray--;
                     // reduce count in for cutting array with duplicated items.

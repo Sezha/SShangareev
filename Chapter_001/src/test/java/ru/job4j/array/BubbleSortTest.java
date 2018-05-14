@@ -12,9 +12,9 @@ import static org.junit.Assert.assertThat;
 public class BubbleSortTest {
 
     @Test
-    public void whenSortArrayWithTenElementsThenSortedArray(){
+    public void whenSortArrayWithTenElementsThenSortedArray() {
         BubbleSort bubbleArray = new BubbleSort();
-        int [] temp = {5, 1, 2, 7, 3};
+        int[] temp = {5, 1, 2, 7, 3};
         int[] result = bubbleArray.sort(temp);
         int[] expected = {1, 2, 3, 5, 7};
         assertThat(result, is(expected));

@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.professions;
 
 /**
 * Class Profession.
@@ -8,6 +8,9 @@ package ru.job4j;
 public class Profession {
 	public String name;
 	public String profession;
+	public Profession() {
+	}
+
 	public Profession(String name, String profession) {
 		this.name = name;
 		this.profession = profession;
@@ -18,7 +21,7 @@ public class Profession {
 	* @return name
 	*/
 	public String getName() {
-		return this.name = name;
+		return this.name;
 	}
 	/*
 	* Method getProfession 
@@ -26,6 +29,6 @@ public class Profession {
 	* @return Profession
 	*/
 	public String getProfession() {
-		return this.profession = profession;
+		return this.profession;
 	}	
 }

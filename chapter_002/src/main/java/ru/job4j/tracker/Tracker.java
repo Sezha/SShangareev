@@ -6,8 +6,8 @@ import java.util.*;
  * class Tracker.
  * Menu of items.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 2.2.
- * @since 05/01/2018.
+ * @version 2.3.
+ * @since 05/14/2018.
  */
 public class Tracker {
     ArrayList<Item> items = new ArrayList<>();

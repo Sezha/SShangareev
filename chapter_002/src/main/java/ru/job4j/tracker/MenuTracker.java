@@ -7,8 +7,8 @@ import java.util.Iterator;
  * class EditItem.
  * external class for method fillActions.
  * @author Sergei Shangangareev (sezhaekb@gmail.com).
- * @version 2.2.
- * @since 05/01/2018.
+ * @version 2.3.
+ * @since 05/14/2018.
  */
 class EditItem extends BaseAction {
     public EditItem(int key, String name) {
@@ -24,23 +24,12 @@ class EditItem extends BaseAction {
         item.setId(id);
         tracker.replace(id, item);
     }
-
-    /*String id = input.ask("Please, enter the task id which you want to replace : ");
-            if (!tracker.findById(id).equals(Item.EMPTY)) {
-        String name = input.ask("Please, enter  the new task name : ");
-        String desc = input.ask("Please, enter  the new description : ");
-        Item item = new Item(name, desc);
-        item.setId(id);
-        tracker.replace(id, item);
-        System.out.println("Item replaced");
-    } else {
-        System.out.println(" Sorry,such a item is not existed");*/
 }
 /**
  * class MenuTracker.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 2.0.
- * @since 05/01/2018.
+ * @version 2.3.
+ * @since 05/14/2018.
  */
 public class MenuTracker {
     private Input input;
@@ -131,15 +120,7 @@ public class MenuTracker {
         @Override
         public void execute(Input input, Tracker tracker) {
             String   id = input.ask("Please, enter the task's ID: ");
-           // if(tracker.findById(id).equals())
-            //for (Item element : tracker.items) {
-             //   if (element.getId().equals(id)) {
-                    tracker.delete(id);
-            //    }
-            //}
-            //int id = Integer.valueOf(input.ask("Please, enter the task's ID: "));
-            //tracker.delete(id);
-            //tracker.items.remove(id);
+            tracker.delete(id);
         }
     }
     /**

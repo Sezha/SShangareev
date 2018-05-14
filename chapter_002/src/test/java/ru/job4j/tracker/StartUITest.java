@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
  * class StartUITest.
  * test of class StartUI.
  * @author Sergei Shangareev (sezhaekb@gmail.com)
- * @version 2.2.
+ * @version 2.3.
  */
 public class StartUITest {
     private final Tracker tracker = new Tracker();
@@ -32,9 +32,9 @@ public class StartUITest {
         tracker.add(first);
         Item second = new Item("test2", "testDescription2", 1234L);
         tracker.add(second);
-        Input input = new StubInput(new String[]{"0", "test3", "desc3", "12345", "6"});
+        Input input = new StubInput(new String[]{"0", "test3", "desc3", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll().get(2).getDescription(), is("desc"));
+        assertThat(tracker.findAll().get(2).getDescription(), is("desc3"));
         }
     /**
      * test of method editItem.
@@ -60,7 +60,7 @@ public class StartUITest {
         tracker.add(second);
         Input input = new StubInput(new String[]{"3", first.getId(), "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll().get(0).getName(), is(second.getName()));
+        assertThat(tracker.findAll().get(0).getName(), is("test2"));
     }
     /**
      * test of method showAll.
@@ -88,9 +88,9 @@ public class StartUITest {
         tracker.add(first);
         Item second = new Item("test2", "testDescription2", 1234L);
         tracker.add(second);
-        Input input = new StubInput(new String[]{"0", second.getId(), "6"});
+        Input input = new StubInput(new String[]{"4", second.getId(), "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById(tracker.findAll().get(1).getId()), is(second));
+        assertThat(tracker.findById(second.getId()), is(second));
     }
     /**
      * test of method FindByName.

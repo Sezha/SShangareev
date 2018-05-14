@@ -5,11 +5,10 @@ import java.util.Date;
 /**
  * class StartUI.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 2.1.
+ * @version 2.3.
  */
 public class StartUI {
    private int[] ranges = {0, 1, 2, 3, 4, 5, 6};
-    //  ArrayList<Integer> ranges = new ArrayList<>();
    private final Input input;
    private final Tracker tracker;
    public StartUI(Input input, Tracker tracker) {
@@ -19,15 +18,19 @@ public class StartUI {
     /**
      * method init.
      */
-   public void init() {
-       Tracker tracker = new Tracker();
-       MenuTracker menu = new MenuTracker(this.input, tracker);
-       menu.fillActions();
-
-           menu.show();
-           menu.select(input.ask("Select:  ", ranges));
-       //} while (!"Y".equals(this.input.ask("Exit? (Y): ")));
-   }
+    public void init() {
+        MenuTracker menu = new MenuTracker(this.input, this.tracker);
+        menu.fillActions();
+        boolean exit = false;
+        while (!exit) {
+            menu.show();
+            int key = input.ask("Select:  ", ranges);
+            menu.select(key);
+            if ("6".equals(String.valueOf(key))) {
+                exit = true;
+            }
+        }
+    }
     /**
      * main method.
      * @param args

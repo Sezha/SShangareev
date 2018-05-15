@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 /**
  * class ValidateInput.
  * @author Sergei Shangareev (sezhaekb@gmail.com).
- * @version 2.3.
+ * @version 2.4.
  */
 public class ValidateInput implements Input {
     private final Input input;

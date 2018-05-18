@@ -22,11 +22,7 @@ public class Bank {
      * @param user user.
      */
     public void addUser(User user) {
-        if (userAccounts.putIfAbsent(user, new ArrayList<>()) != null) {
-            System.out.println(String.format("User already exists."));
-        } else {
-            userAccounts.put(user, new ArrayList<>());
-        }
+       userAccounts.putIfAbsent(user, new ArrayList<>());
     }
 
     /**

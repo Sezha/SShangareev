@@ -9,11 +9,11 @@ public class Account {
     /**
      * value is amount of money.
      */
-    double value;
+    private double value;
     /**
      * requisites is bank account.
      */
-    String requisites;
+    private String requisites;
 
     /**
      * constructor of class Account.

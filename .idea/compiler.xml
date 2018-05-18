@@ -15,6 +15,7 @@
       <module name="chapter_001" target="1.8" />
       <module name="chapter_002" target="1.8" />
       <module name="chapter_003" target="1.8" />
+      <module name="collections" target="1.8" />
       <module name="junior" target="1.8" />
       <module name="Tracker" target="1.5" />
     </bytecodeTargetLevel>
